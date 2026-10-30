@@ -6,9 +6,9 @@ The package does not operate a hosted service. Execution still depends on the ho
 
 ## Report privately
 
-When available on the public repository, use **Security → Report a vulnerability**. Otherwise, use the maintainer's published private contact.
+Use [Security → Report a vulnerability](https://github.com/ipassya/Lucky-Kit/security/advisories/new) on the official repository. Private vulnerability reporting is enabled. Sign in to GitHub to submit a report to the maintainer.
 
-If neither exists, request a private security channel without disclosing the vulnerability. Do not put secrets or exploit details in a public issue. This source distribution does not specify a public repository or reporting email; a working private channel is required before public launch.
+Do not put secrets or exploit details in a public issue. If the private form is unavailable, request a private security channel without disclosing the vulnerability.
 
 Include:
 
@@ -21,6 +21,6 @@ Test only within systems and accounts you are authorized to use.
 
 ## Support status
 
-Lucky Kit is in early development. No supported release series or response-time commitment has been established. Reports should be assessed against the affected source, with fixes and affected versions documented when releases are available.
+Report the affected release tag or source commit. Reports are assessed against the current source; no response-time or backport commitment has been established. Fixes and affected versions should be documented in subsequent releases.
 
 This policy describes the reporting process; it is not evidence of an independent security audit.
