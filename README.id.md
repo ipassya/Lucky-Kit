@@ -28,6 +28,10 @@ Lucky Kit memilih file berdasarkan siapa yang memakainya serta keputusan atau pe
 
 Persiapan implementasi mencakup seluruh versi pertama yang direncanakan, termasuk tasks setelah task awal. Draft perencanaan yang lengkap masih bisa punya blocker; Lucky Kit melaporkannya dan menunjukkan pekerjaan yang bisa dimulai secara independen. Kelengkapan rencana gak membuktikan persetujuan, implementasi, keberhasilan pengujian, atau kesiapan produksi.
 
+Rencana delivery menghubungkan penggalian masalah, scope rilis dan draft spesifikasi, prototype terarah atau eksperimen teknis sesuai kebutuhan, evaluasi dan pembaruan spesifikasi, implementasi bertahap per alur fungsional, lalu verifikasi keseluruhan dan handoff. Jenis pekerjaan ini bisa disesuaikan, tanpa mewajibkan fase atau dokumen terpisah. Aplikasi dengan interaksi penting yang belum teruji biasanya mendapat prototype terarah sebelum implementasi terkait; alur yang sudah terbukti dan produk API gak otomatis memerlukannya. Setiap bagian fungsional punya verifikasi, sehingga seluruh pengujian gak ditumpuk di akhir.
+
+“Prototype dulu” mempertahankan rencana seluruh MVP dan mengubah urutannya; “prototype saja” membatasi scope. Rencana prototype menjelaskan pertanyaan yang diuji, tingkat detail, aktor/skenario, data contoh, interaksi nyata atau simulasi, kriteria keberhasilan, evaluasi, dan keputusan berikutnya. Membuat atau mengeklik mock belum membuktikan validasi pengguna maupun persistensi/kontrol akses nyata. Temuan memperbarui spesifikasi dan kesiapan task terdampak; feedback yang belum tersedia gak menghalangi perencanaan independen. Merencanakan prototype gak otomatis membuatnya.
+
 Setiap pembuatan atau perubahan mengikuti konvensi workspace, menjaga keputusan yang menjadi acuan, meninjau isi serta dokumen terdampak, dan menjalankan pemeriksaan sesuai perubahan. Dalam repo Git yang sudah tersedia, Lucky Kit otomatis melakukan commit untuk satu pembaruan tugas yang utuh dan sudah divalidasi, kecuali kamu atau aturan workspace meminta sebaliknya. Perubahan lain tetap dijaga; perubahan yang bercampur dilaporkan sebagai hambatan, bukan ikut dimasukkan. Skill gak otomatis menginisialisasi Git atau melakukan push. Tanpa Git, dokumen tetap disimpan dan status tanpa commit dilaporkan.
 
 Perubahan yang bercampur dalam satu file perlu dipisahkan per bagian; memilih seluruh file saja belum cukup. Hook yang gagal tetap diaktifkan, dan permintaan eksplisit jangan commit membuat perubahan tugas tetap belum di-commit maupun di-stage. Commit baru dilaporkan setelah isi aktualnya diperiksa.
@@ -85,6 +89,8 @@ Gunakan keputusan yang sudah ada, gali kekurangan informasi dan trade-off pentin
 ```
 
 Ganti bidang, pengguna, dan batasan pada contoh untuk merencanakan ide lain. Permintaan berbahasa Indonesia menghasilkan diskusi dan dokumen Indonesia; bahasa lainnya menghasilkan bahasa Inggris.
+
+Untuk mendahulukan prototype, tambahkan: “Rencanakan seluruh MVP, tetapi dahulukan prototype alur utama dengan data sintetis. Sertakan tasks evaluasi dan pembaruan spesifikasi sebelum implementasi yang bergantung padanya. Tandai interaksi simulasi dan lanjutkan pekerjaan independen.”
 
 ## Gunakan dengan tool pilihanmu
 

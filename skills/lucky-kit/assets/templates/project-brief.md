@@ -14,5 +14,7 @@
 ## Work and verification
 {{For implementation preparation: dependency-ordered milestones and actionable tasks covering the bounded release, inline or linked to their owning plan. Include milestone exit criteria and task IDs, outcomes, source requirements, dependencies, acceptance, verification, and readiness/blockers. Provide the next Ready task's handoff. For explicit exploration or a narrow request, keep only relevant next actions. Evidence remains unrun unless actually checked.}}
 
+{{When a prototype/experiment is warranted, include its question, fidelity, working/simulated scope, evaluation criteria, and reconciliation tasks inline or linked. Preserve the whole release plan for prototype-first requests; limit scope when prototype-only is explicit. Follow with useful functional slices and verification within each. Omit unwarranted experimentation.}}
+
 ## Continue here
 {{Document map when needed, current position, next action, and blockers.}}

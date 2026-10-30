@@ -28,6 +28,10 @@ Lucky Kit chooses files by who will use them and what decision or work they supp
 
 Implementation preparation covers the whole bounded release, not just the first task. A complete planning draft can still contain blockers; Lucky Kit reports them and identifies independent work that can start. Planning completeness does not prove approval, implementation, test success, or production readiness.
 
+The delivery plan connects problem discovery, release scope and draft specifications, targeted prototyping or technical experiments where needed, evaluation and specification updates, useful functional slices, and whole-outcome verification/handoff. These are adaptable kinds of work, not required phases or separate documents. New user-facing apps with consequential untested interactions normally get a focused prototype before dependent implementation; established flows and API-only products do not automatically need one. Each functional slice includes verification rather than leaving all tests to the end.
+
+"Prototype first" retains the full MVP plan and changes the order; "prototype only" limits the scope. A prototype plan states the question, fidelity, actors/scenarios, sample data, working versus simulated behavior, success criteria, evaluation, and follow-up decision. Building or clicking a mock is not proof of real user validation or working persistence/access control. Findings update specifications and affected task readiness; pending feedback does not prevent independent planning. Planning a prototype does not automatically build it.
+
 For each creation or revision, Lucky Kit follows workspace conventions, preserves authoritative decisions, reviews affected content and dependents, and performs checks appropriate to the change. In an existing Git repository, it automatically commits a coherent, validated task update unless you or the workspace instruct otherwise. It preserves unrelated work and reports blockers rather than bundling mixed changes. It does not initialize Git or push automatically. Without Git, it saves the documents and reports that no commit was made.
 
 Changes mixed in the same file require hunk-level isolation; selecting the whole file is not sufficient. Failed hooks remain enabled, and explicit no-commit requests leave task edits uncommitted and unstaged. A commit is reported only after its actual contents are verified.
@@ -82,6 +86,8 @@ Reuse existing decisions, probe consequential gaps and trade-offs, and keep docu
 ```
 
 Replace the example's domain, users, and constraints to plan another idea. Indonesian requests produce Indonesian discussion and documents; other languages produce English output.
+
+For a prototype-first delivery, add: "Plan the whole MVP, but prototype the main user flow with synthetic data first. Include evaluation and specification-update tasks before dependent implementation. Mark simulated behavior and keep independent work moving."
 
 ## Use it with your tools
 

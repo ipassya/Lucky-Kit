@@ -25,6 +25,7 @@ For an app idea or full planning request, create the relevant documentation now 
 - The bounded release has users, scope, constraints, observable acceptance, and relevant success, rejection, and recovery behavior.
 - Applicable design, technical, data, and interface decisions are concrete enough to guide work. Keep proposals and unresolved material decisions visibly separate from accepted requirements.
 - The delivery plan covers every in-scope capability with dependency-ordered milestones and actionable tasks, including verification and release/operations work where relevant. Link tasks to their specification owners.
+- When a prototype or experiment is warranted, the plan follows [delivery and prototypes](planning.md#delivery-and-prototypes): identify what it tests, separate creation from evaluation, reconcile findings, and retain the full-release plan unless the user explicitly requests prototype-only scope. Unknown future findings make dependent details conditional, not absent.
 - The next implementable task has sufficient inputs and checks to proceed. If none is ready, identify the smallest unblocking action and the tasks it affects. Unknowns do not excuse omitting independent specifications or the rest of the plan.
 - Navigation, shared contracts, acceptance, and task statuses agree. Report what is ready, what is conditional on proposals, and what remains blocked. A complete planning draft can contain blockers; it must not be called implementation-ready as a whole while material blockers remain.
 
@@ -54,6 +55,8 @@ Add API contracts, security/privacy, operations/recovery, migrations, research, 
 Keep the delivery plan in an existing owner, `docs/ipd.md`, or a delivery section of a small consolidated specification. Milestones and tasks are required coverage for implementation preparation, not a requirement for a particular filename or six-document package.
 
 Define milestones as observable useful outcomes in dependency order. For each, record its scope, predecessor milestones, exit criteria, and tasks. Cover the whole bounded release, including setup, integration, verification, and distribution/operations only where needed. Put future releases outside this plan rather than inventing a detailed roadmap for them.
+
+Express prototype milestones as learning outcomes with a bounded artifact and evaluation criteria, not merely "finish all screens". Connect evaluation/reconciliation tasks to dependent functional work. Distinguish simulated acceptance from real functional acceptance, and place verification within each functional slice instead of deferring all testing until the final milestone. Apply the [delivery sequence](planning.md#delivery-and-prototypes) proportionally; it does not require one milestone or document per stage.
 
 Each task needs a stable identifier, bounded result, linked requirements/contracts, dependencies, observable acceptance, a verification method, and readiness or blocker. Use the workspace's existing IDs and statuses. Otherwise use simple milestone/task IDs and distinguish Ready, Waiting on dependencies, and Blocked by an unresolved decision; keep execution progress and verification evidence separate. Never mark all tasks Ready just because their descriptions exist. A task relying on an unresolved material proposal is conditional or blocked, not unconditionally Ready.
 

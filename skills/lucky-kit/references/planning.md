@@ -32,8 +32,31 @@ Translate design direction into hierarchy, layout, semantic tokens, components, 
 
 Use a sketch or preview when it resolves a real layout or interaction decision, or the user requests one. A text wireframe is a valid fallback. Label sample data and simulated actions. Distinguish creation, rendering, interaction checks, and user feedback. Feed accepted findings back into the owning specification.
 
-## Delivery
+## Delivery and prototypes
 
-Sequence work by dependencies and useful outcomes. A prototype or technical spike is conditional, not a mandatory first milestone. Existing projects can start with their next missing capability. For implementation preparation, cover the entire bounded first release with milestones and tasks using [documents](documents.md#milestones-and-tasks). Detail the next implementable task as a handoff and give every later in-scope task an actionable outcome, dependencies, acceptance, verification, and readiness without speculative file-by-file plans. Do not invent dates or capacity.
+Use the sequence below as an adaptable delivery plan, not mandatory phases, document names, or approval gates. Reuse evidence already available; merge or skip work with a concrete reason. Existing projects start at the next useful gap. Document the whole bounded release now while keeping later details conditional on findings that could change them.
+
+| Work | Intended result and evidence needed to continue |
+| --- | --- |
+| Understand the problem | Actors, current scenario, desired outcome, constraints, and consequential unknowns. Distinguish user evidence from hypotheses; reuse known answers. |
+| Bound the release and draft specifications | In-scope capabilities, important flows, acceptance, proposed design/data/technical boundaries, and a delivery plan. Do not wait for every detail or freeze untested choices. |
+| Test consequential assumptions where needed | A targeted prototype for interaction uncertainty, or a bounded technical experiment for feasibility. State the question and choose the least costly fidelity that can answer it. |
+| Evaluate and reconcile | Record actual observations, unresolved findings, and whether to proceed, revise, or defer. Update the owning specifications, contracts, acceptance, dependencies, and affected task readiness. |
+| Implement useful functional slices | Each slice completes a bounded user outcome across applicable UI, rules, data, and interfaces, with its own verification. Keep enabling setup small; avoid building every layer before the first real flow works. |
+| Verify the whole outcome and hand off | Check cross-slice behavior, access, failures, accessibility, and relevant quality constraints. Include distribution, operations, and release checks only within scope; separate planning, implementation, test evidence, and release readiness. |
+
+For a new user-facing app with untested consequential interactions, normally plan a targeted prototype and evaluation before committing dependent implementation details. Honor an explicit prototype-first request. Skip a separate prototype when existing evidence already answers the question, the change is straightforward, or the product has no relevant UI uncertainty. An API-only app may need a technical experiment instead, and neither technique is required without an actual uncertainty. Do not introduce screens or a backend to justify an experiment.
+
+"Prototype first" changes sequencing; it does not mean "prototype only". Unless the user explicitly limits scope, retain specifications, milestones, and actionable tasks for the whole bounded release, with prototype work detailed first and dependent implementation labeled conditional where necessary. If the user asks only for a prototype, limit documentation and delivery to its purpose and evaluation; do not add a full MVP backlog. Planning either path does not itself authorize building the prototype or application.
+
+### Define the prototype or experiment
+
+Record its question or hypothesis, target actor/scenario, chosen fidelity and rationale, included paths and important failure states, sample data, working versus simulated actions, exclusions, evaluation method, observable success criteria, and follow-up decision. A sketch can test layout; an interactive mock can test navigation; a functional slice or technical experiment is needed to test persistence or integration behavior. Do not present simulated login, access, payments, or storage as proof that the real contract works. Use synthetic data where real data is unnecessary.
+
+Give creation and evaluation distinct task outcomes, even if one small milestone contains both. Building, rendering, clicking through, heuristic review, and feedback from actual users are different evidence. Name the method and environment and report only observations actually obtained. A self-check must not be called user validation. If feedback is unavailable, mark evaluation pending and only the dependent decisions/tasks conditional; still complete the independent planning work.
+
+Reconcile findings before implementing behavior they could invalidate. State whether prototype code will be discarded, selectively reused after checking its suitability, or evolved as an intentionally functional slice; polished mock code is not automatically a production foundation. Do not require approval for every stage or stop authorized independent work while waiting for unrelated feedback.
+
+For implementation preparation, cover the entire bounded first release with milestones and tasks using [documents](documents.md#milestones-and-tasks). Detail the next implementable task as a handoff and give every later in-scope task an actionable outcome, dependencies, acceptance, verification, and readiness without speculative file-by-file plans. Verification belongs in each slice as well as final cross-slice checks. Do not invent dates, capacity, or test/user-feedback results.
 
 Use [documents](documents.md) when preparing durable specifications or a handoff. Stop at the requested result; planning does not itself initiate implementation.
