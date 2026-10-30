@@ -20,11 +20,15 @@ Lucky Kit adalah kumpulan instruksi AI yang dapat digunakan kembali untuk perenc
 
 Perencanaan aplikasi otomatis membuat dan memperbarui dokumen di workspace aplikasi setelah lokasi dan tujuan dasarnya jelas. Kamu gak perlu meminta penyimpanan secara terpisah. Kalau lokasinya belum jelas, Lucky Kit menanyakannya sambil melanjutkan penggalian kebutuhan. Permintaan khusus diskusi saja atau review saja tetap di chat; tanpa akses file, skill memberikan isi dokumen dan menjelaskan bahwa hasil belum disimpan. Review atau dokumentasi aplikasi gak otomatis mengizinkan perubahan kode.
 
-Lucky Kit menggali keputusan penting lewat pertanyaan terarah, biasanya satu per satu. Pertanyaannya membahas skenario konkret, asumsi, prioritas, dan trade-off, memakai jawaban yang sudah tersedia, serta memperbarui draft seiring keputusan diperjelas. Kamu bisa meminta pertanyaan dihentikan dan draft dibuat dengan hal yang belum diketahui tetap ditandai.
+Lucky Kit punya penggalian kebutuhan seperti grill-me, biasanya satu pertanyaan per giliran. Skill membahas skenario konkret, menguji asumsi, menelusuri konsekuensi jawaban, dan menerima jawaban di luar opsi yang ditawarkan. Jawaban yang sudah ada dipakai kembali dan draft diperbarui seiring keputusan diperjelas. Kamu bisa meminta pertanyaan dihentikan dan draft dibuat dengan hal yang belum diketahui tetap ditandai; gak perlu skill wawancara terpisah.
 
 Lucky Kit memilih file berdasarkan siapa yang memakainya serta keputusan atau pekerjaan yang dibantu. Skill mengutamakan pembaruan dokumen yang ada atau penambahan bagian sebelum membuat file terpisah. PRD (Product Requirement Documentation), TRD (Technical Requirement Documentation), AFD (App Flow Documentation), DBD (Design Brief Documentation), BSD (Backend Schema Documentation), dan IPD (Implementation Plan Documentation) adalah pilihan format, bukan paket wajib. Aplikasi kompleks pun bisa memakai kurang dari enam file; permintaan khusus skema atau handoff gak otomatis menambah dokumen pendamping.
 
+Kedalaman isi mengikuti penggunaan berikutnya: eksplorasi mencatat kebutuhan dan pertanyaan penting, dukungan keputusan membandingkan trade-off yang relevan, sedangkan handoff implementasi menyediakan kontrak dan kriteria penerimaan untuk mulai bekerja. Lucky Kit menyimpulkannya dari permintaan, memperdalam dokumen yang ada saat keputusan matang, dan gak memaksakan jumlah kata atau formulir pemilihan mode.
+
 Setiap pembuatan atau perubahan mengikuti konvensi workspace, menjaga keputusan yang menjadi acuan, meninjau isi serta dokumen terdampak, dan menjalankan pemeriksaan sesuai perubahan. Dalam repo Git yang sudah tersedia, Lucky Kit otomatis melakukan commit untuk satu pembaruan tugas yang utuh dan sudah divalidasi, kecuali kamu atau aturan workspace meminta sebaliknya. Perubahan lain tetap dijaga; perubahan yang bercampur dilaporkan sebagai hambatan, bukan ikut dimasukkan. Skill gak otomatis menginisialisasi Git atau melakukan push. Tanpa Git, dokumen tetap disimpan dan status tanpa commit dilaporkan.
+
+Perubahan yang bercampur dalam satu file perlu dipisahkan per bagian; memilih seluruh file saja belum cukup. Hook yang gagal tetap diaktifkan, dan permintaan eksplisit jangan commit membuat perubahan tugas tetap belum di-commit maupun di-stage. Commit baru dilaporkan setelah isi aktualnya diperiksa.
 
 ## Mulai menggunakan
 
@@ -90,6 +94,7 @@ Instalasi cukup dengan menyalin folder secara manual. Installer Python dan Power
 
 - [Panduan kontribusi](CONTRIBUTING.md): struktur paket, penyuntingan, dan pemeriksaan wajib.
 - [Keputusan desain](docs/redesign.md): struktur workflow dan pengukuran konteks.
+- [Evaluasi perilaku](docs/behavior-evaluation.md): skenario terisolasi yang bisa diulang, bukti Git, dan review penggalian kebutuhan serta kegunaan dokumen.
 - [Panduan komunitas](CODE_OF_CONDUCT.md) · [Pelaporan keamanan](SECURITY.md) · [Persiapan rilis](docs/open-source.md).
 
 ## Lisensi dan kredit

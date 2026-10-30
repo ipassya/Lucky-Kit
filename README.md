@@ -20,11 +20,15 @@ Lucky Kit is a reusable set of AI instructions for product planning and document
 
 App planning automatically creates and updates documents in your application's workspace once the destination and basic outcome are known. You do not need to ask separately to save them. If the destination is unclear, Lucky Kit asks for it while continuing discovery. Explicit discussion-only and review-only requests stay in chat; without file access, it returns document content and clearly states that it has not been saved. Reviewing or documenting an application does not authorize code changes.
 
-Lucky Kit explores consequential decisions through focused questions, usually one at a time. It probes concrete scenarios, assumptions, priorities, and trade-offs, reuses answers already available, and updates drafts as decisions emerge. You can ask it to stop questions and produce a draft with explicit unknowns.
+Lucky Kit includes a probing interview in the spirit of grill-me, usually one question at a time. It explores concrete scenarios, challenges assumptions, follows answers into their consequences, and accepts answers beyond its suggested options. It reuses known answers and updates drafts as decisions emerge. You can ask it to stop questions and produce a draft with explicit unknowns; no separate interview skill is required.
 
 Lucky Kit chooses files by who will use them and what decision or work they support. It updates an existing document or adds a section before creating a separate file. PRD (Product Requirement Documentation), TRD (Technical Requirement Documentation), AFD (App Flow Documentation), DBD (Design Brief Documentation), BSD (Backend Schema Documentation), and IPD (Implementation Plan Documentation) are available formats, not a required package. Even a complex app can use fewer than six files; a focused schema or handoff request does not automatically add companion documents.
 
+Depth follows the next use: exploration captures needs and consequential questions, decision support compares meaningful trade-offs, and an implementation handoff provides the contracts and acceptance needed to act. Lucky Kit infers this from your request, deepens existing documents as decisions mature, and does not impose a word count or a mode-selection questionnaire.
+
 For each creation or revision, Lucky Kit follows workspace conventions, preserves authoritative decisions, reviews affected content and dependents, and performs checks appropriate to the change. In an existing Git repository, it automatically commits a coherent, validated task update unless you or the workspace instruct otherwise. It preserves unrelated work and reports blockers rather than bundling mixed changes. It does not initialize Git or push automatically. Without Git, it saves the documents and reports that no commit was made.
+
+Changes mixed in the same file require hunk-level isolation; selecting the whole file is not sufficient. Failed hooks remain enabled, and explicit no-commit requests leave task edits uncommitted and unstaged. A commit is reported only after its actual contents are verified.
 
 ## Getting started
 
@@ -87,6 +91,7 @@ Manual copying is sufficient for installation. Optional Python and PowerShell in
 
 - [Contribution guide](CONTRIBUTING.md): package structure, editing, and required checks.
 - [Design decisions](docs/redesign.md): workflow structure and context measurement.
+- [Behavior evaluation](docs/behavior-evaluation.md): reproducible isolated scenarios, Git evidence, and human review of discovery and document usefulness.
 - [Community guidelines](CODE_OF_CONDUCT.md) · [Security reporting](SECURITY.md) · [Release preparation](docs/open-source.md).
 
 ## License and credits

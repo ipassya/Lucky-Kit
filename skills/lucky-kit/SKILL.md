@@ -28,7 +28,7 @@ Read only the reference needed for the current action:
 | Documentation from implementation | [Codebase](references/codebase.md) |
 | Specifications, tasks, or handoffs | [Documents](references/documents.md) |
 
-These are entry points, not mandatory phases. Small requests need only this core. For app planning, save a useful draft once the workspace and basic outcome are known; do not wait for the entire interview to finish. Choose the smallest useful file set with [documents](references/documents.md): reuse an existing owner, add a section, or create a separate document only for a concrete user need. PRD, TRD, AFD, DBD, BSD, and IPD are available formats, not a checklist. Cover the requested scope fully; templates and formal registers are optional.
+These are entry points, not mandatory phases. Small requests need only this core. For app planning, save a useful draft once the workspace and basic outcome are known; do not wait for the entire interview to finish. Match its depth to exploration, a decision, or an implementation handoff using [documents](references/documents.md); infer this from the request rather than asking the user to select a mode. Choose the smallest useful file set: reuse an existing owner, add a section, or create a separate document only for a concrete user need. PRD, TRD, AFD, DBD, BSD, and IPD are available formats, not a checklist. Cover the requested scope fully; templates and formal registers are optional.
 
 ## Keep work connected
 
@@ -42,7 +42,7 @@ Before writing, inspect applicable workspace instructions, existing content, and
 
 After writing, review the actual diff or changed sections, update affected dependents, and check relevant links, acceptance, and evidence. Run required workspace checks and checks justified by the change; a prose edit does not automatically require application tests. Resolve findings within scope, report checks that could not run, and stop after sufficient verification.
 
-In an existing Git repository, automatically commit the completed, validated changes for this task unless the user or workspace instructions say otherwise. Inspect the working tree and staged diff first; include only this task's changes and preserve unrelated work. If mixed or pre-staged changes cannot be isolated safely, do not bundle, discard, or unstage them; report why the commit is blocked. Commit a coherent update, not every draft write. Do not create an empty commit, initialize Git, push, rewrite history, or bypass failed checks. Without Git, save normally and report that no commit was made. Report the actual commit hash or the reason it remains uncommitted.
+In an existing Git repository, automatically commit a coherent, completed, validated task update unless the user or workspace instructions say otherwise. Before editing, use [Git changes](references/git-changes.md) to preserve existing work and handle mixed changes, explicit no-commit requests, and failed hooks. Do not initialize Git, push, rewrite history, or bypass checks. Without Git, save normally and report that no commit was made. Report the actual commit hash or why the update remains uncommitted.
 
 ## Adapt to capabilities
 

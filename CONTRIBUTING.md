@@ -36,6 +36,8 @@ Skill changes also require the `quick_validate.py` supplied by skill-creator. Re
 
 For workflow changes, exercise a representative request. Report the prompt, agent/model or review method, relevant environment, expected behavior, observed behavior, and limitations. Label self-review accurately. A spelling correction does not require an application demo.
 
+Use the [behavior evaluation guide](docs/behavior-evaluation.md) to prepare repeatable external workspaces and inspect evidence without changing the agents' results. The tooling records Git and filesystem facts; discovery quality, useful depth, and appropriate file selection require review of actual interactions and outputs. Run `python scripts/test-evaluate-workflow.py` when changing the evaluator. Keep previous runs outside the repository for comparisons; do not turn exact wording or file counts into a quality score.
+
 After validation, use either installer at the destination originally chosen. For structural changes that remove files, use the backup-and-replace procedure in the [installation guide](docs/installation.md); ordinary update flags retain extra files.
 
 ## Make the result reviewable

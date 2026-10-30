@@ -16,6 +16,10 @@ File selection now explicitly considers the reader, the decision or work served,
 
 Creation and revision share a proportional quality loop: inspect context, change the owning content, reconcile dependents, review the result, and run relevant checks. Validated task updates are committed automatically in an existing Git repository, preserving unrelated work and honoring user/workspace exceptions. The workflow does not initialize repositories, push, or bypass failed checks. A missing repository or unsafe mixed changes is reported, not silently worked around.
 
+Depth is now inferred from the next use: exploration, decision support, or implementation handoff. These are not mandatory phases or document sets. Early discovery asks consequential questions promptly and avoids detailed architecture before basic intent is understood. Existing documents deepen as needed. The built-in probing interview remains active, including follow-up reasoning, accepting answers outside suggested options, and respecting a request to stop questions.
+
+Mixed Git changes are assessed against HEAD, index, and working tree, including changes within one file. Hook failures and no-commit requests have explicit boundaries. Repeatable evaluation tooling prepares fixtures outside the repository and inspects observable facts separately from human judgments of relevance, depth, and discovery. A safe blocked commit is reported separately from successful automatic committing.
+
 OpenAI UI metadata remains optional. Deleting it would reduce convenience for that host without improving the portability of the core. Multiple vendor adapters would add maintenance and drift without changing the shared instructions.
 
 ## Trade-offs

@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   package:
-    name: Package and installer (${{ matrix.os }})
+    name: Package and helpers (${{ matrix.os }})
     strategy:
       fail-fast: false
       matrix:
@@ -29,3 +29,5 @@ jobs:
         run: ./scripts/test-install.ps1
       - name: Check Python installer behavior
         run: python scripts/test-install.py
+      - name: Check evaluation helper behavior
+        run: python scripts/test-evaluate-workflow.py

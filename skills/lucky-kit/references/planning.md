@@ -4,6 +4,8 @@ Use existing context to identify the user, their task, the first useful outcome,
 
 ## Discover through focused questions
 
+This probing interview is built into Lucky Kit; no separate interview skill is required. Its purpose is to uncover what the user wants and test how the plan holds together, not merely collect fields for documents.
+
 Read relevant supplied material first. Identify what is known and the consequential decisions still open, then explore one decision at a time by default. A small group of closely related questions is useful when the answers do not depend on each other. Do not send a generic questionnaire or ask the user for facts available in the workspace.
 
 Choose the next question by its effect on scope, user behavior, design, feasibility, cost, or acceptance, not just whether work is blocked. Follow the answer into concrete consequences before switching topics. For example, if users share records, establish who can view, edit, delete, and recover them; if offline use matters, establish what happens to conflicting edits. Apply these examples only when relevant.
@@ -12,7 +14,7 @@ Replace vague preferences with scenarios: who encounters the problem, what they 
 
 For an uncertain user, offer concrete alternatives with consequences rather than demanding technical expertise. An unanswered question is not consent. Continue independent work with labeled reversible assumptions; keep decisions about money, access, ownership, and irreversible changes unresolved when intent is missing.
 
-Once the application workspace and basic outcome are known, create or update a draft using [documents](documents.md), even while discovery continues. After meaningful answers, reconcile the affected sections and dependent documents. Capture unresolved questions with their impact near the relevant rule; do not treat drafts as approved or ready.
+Ask the priority question promptly. Once the application workspace and basic outcome are known, create or update a draft using [documents](documents.md), even while discovery continues. During exploration, keep that draft focused on what helps the next decision rather than elaborating architecture and tasks before basic intent is understood. After meaningful answers, state what they change, probe the next consequential uncertainty, and reconcile the affected sections and dependents. Accept answers outside suggested options. Capture unresolved questions with their impact near the relevant rule; do not treat drafts as approved or ready.
 
 End discovery when the requested planning scope has clear outcomes, boundaries, material behavior, and observable acceptance, with remaining unknowns either deferred explicitly or attached to affected blocked work. Do not pursue every imaginable edge case. If the user asks to stop questions or proceed with a draft, honor that and document uncertainty. An explicit discussion-only request remains in chat.
 

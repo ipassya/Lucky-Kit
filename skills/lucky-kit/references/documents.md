@@ -4,6 +4,20 @@ Honor requested formats and existing paths. App planning produces saved Markdown
 
 For a new workspace without documentation conventions, use `docs/project-brief.md` for a consolidated plan unless another requested artifact is a better starting point. Preserve equivalent existing documents instead of creating duplicates. Keep navigation in the existing entry point or brief when multiple documents need it; do not create a separate index for a single self-contained file.
 
+## Match depth to the next use
+
+Infer the reader's immediate need from the request and available context. These are levels of detail, not mandatory phases, modes to ask the user to select, or additional documents:
+
+| Immediate need | Useful depth | Defer unless it changes the current decision |
+| --- | --- | --- |
+| Explore an idea or understand a problem | Concrete user scenario, desired outcome, bounded scope hypothesis, important constraints, and the next consequential questions | Stack selection, field-by-field schemas, exhaustive states, implementation tasks |
+| Choose between approaches or settle a rule | Relevant alternatives, trade-offs under known constraints, a recommendation with its assumptions, and what the choice changes | Detailed implementation for every alternative or a full delivery package |
+| Hand off work to an implementer | Settled behavior, material failures/permissions, relevant data or interface contracts, dependencies, observable acceptance, verification, and blockers | Speculative later features, unneeded architecture, and instructions unrelated to the next slice |
+
+An exploratory draft can be short without losing known constraints. A handoff can be detailed without multiplying files. For a targeted correction, update the affected rule and dependents at their established depth; do not expand unrelated sections. As decisions mature, deepen the same owner before adding documents. Explicit requests for comprehensive detail still govern.
+
+Check usefulness, not a fixed page, word, section, or file count: can the intended reader take the next step, and does each substantive section help that step? Remove premature detail or duplication; retain detail necessary to prevent guessing about material behavior.
+
 ## Decide whether a file is needed
 
 Before creating or splitting a document, identify its reader, the decision or implementation work it supports, and why an existing section or document cannot serve that need well. This can be a brief explanation, not a new register or approval step. A feature mentioning data, screens, or delivery does not by itself require BSD, DBD, or IPD files.
