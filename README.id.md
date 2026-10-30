@@ -26,29 +26,40 @@ Proyek kecil dimulai dengan satu brief. Dokumen produk, alur, desain, teknis, da
 ### Template siap salin
 
 ```text
-Gunakan Lucky Kit untuk merencanakan [aplikasi] bagi [pengguna], guna menyelesaikan [masalah].
+Gunakan Lucky Kit untuk merencanakan [aplikasi] bagi [pengguna], guna menyelesaikan
+  [masalah].
 Alur utama: [pemicu → tindakan → hasil].
 MVP: [fitur wajib versi pertama]. Di luar scope: [pengecualian].
-Platform dan desain: [web/mobile/lainnya; kebutuhan visual atau design system yang tersedia].
+Platform dan desain: [web/mobile/lainnya; kebutuhan visual atau design system yang
+  tersedia].
 Data dan integrasi: [data yang dicatat, sumber, aturan akses, layanan eksternal].
 Batasan: [budget, tenggat, stack, atau kebutuhan lain].
 Materi tersedia: [belum ada, dokumen, desain, atau kode; lokasi jika bisa diakses].
-Hasil: [brief, spesifikasi selaras, dokumentasi kondisi aktual, atau handoff]; [chat atau lokasi tujuan].
-Gunakan keputusan yang sudah ada, tandai kekurangan informasi, dan tanyakan hanya hal yang menghambat pekerjaan.
+Hasil: [brief, spesifikasi selaras, dokumentasi kondisi aktual, atau handoff]; [chat
+  atau lokasi tujuan].
+Gunakan keputusan yang sudah ada, tandai kekurangan informasi, dan tanyakan hanya hal
+  yang menghambat pekerjaan.
 ```
 
 ### Contoh: aplikasi keuangan pribadi
 
 ```text
-Gunakan Lucky Kit untuk merencanakan aplikasi keuangan pribadi bagi freelancer yang perlu mencatat pemasukan tidak tetap.
-Alur utama: tambah pemasukan atau pengeluaran → perbarui saldo dompet → tinjau budget bulanan.
-MVP: transaksi manual, dompet, kategori, budget bulanan. Di luar scope: sinkronisasi bank, pembayaran, investasi.
-Platform dan desain: web yang nyaman di ponsel; dashboard sederhana dan pencatatan transaksi yang cepat.
-Data dan integrasi: catatan pribadi per pengguna dalam Rupiah; login email; tanpa koneksi bank.
+Gunakan Lucky Kit untuk merencanakan aplikasi keuangan pribadi bagi freelancer yang
+  perlu mencatat pemasukan tidak tetap.
+Alur utama: tambah pemasukan atau pengeluaran → perbarui saldo dompet → tinjau budget
+  bulanan.
+MVP: transaksi manual, dompet, kategori, budget bulanan. Di luar scope: sinkronisasi
+  bank, pembayaran, investasi.
+Platform dan desain: web yang nyaman di ponsel; dashboard sederhana dan pencatatan
+  transaksi yang cepat.
+Data dan integrasi: catatan pribadi per pengguna dalam Rupiah; login email; tanpa
+  koneksi bank.
 Batasan: MVP 6 minggu, hosting maksimal Rp500.000/bulan; stack belum ditentukan.
 Materi tersedia: baru ide.
-Hasil: brief di chat berisi scope, alur, kebutuhan data, kriteria penerimaan, dan keputusan terbuka.
-Gunakan keputusan yang sudah ada, tandai kekurangan informasi, dan tanyakan hanya hal yang menghambat pekerjaan.
+Hasil: brief di chat berisi scope, alur, kebutuhan data, kriteria penerimaan, dan
+  keputusan terbuka.
+Gunakan keputusan yang sudah ada, tandai kekurangan informasi, dan tanyakan hanya hal
+  yang menghambat pekerjaan.
 ```
 
 Ganti bidang, pengguna, dan batasan pada contoh untuk merencanakan ide lain. Permintaan berbahasa Indonesia menghasilkan diskusi dan dokumen Indonesia; bahasa lainnya menghasilkan bahasa Inggris.
