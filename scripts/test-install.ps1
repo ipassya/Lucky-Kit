@@ -31,6 +31,22 @@ function Assert-MatchesSource {
 
 try {
     New-Item -ItemType Directory -Path $testDirectory | Out-Null
+    foreach ($arguments in @(@{}, @{ SkillsRoot = '' }, @{ SkillsRoot = '   ' })) {
+        $rejected = $false
+        try {
+            & {
+                # Prevent a regression from writing to a real global skill directory.
+                function New-Item { throw 'Unexpected write without an explicit skills root.' }
+                function Copy-Item { throw 'Unexpected write without an explicit skills root.' }
+                & $installer @arguments | Out-Null
+            }
+        }
+        catch {
+            if ($_.Exception.Message -notmatch 'Specify -SkillsRoot explicitly') { throw }
+            $rejected = $true
+        }
+        Assert-Condition $rejected 'Missing, empty, and whitespace-only roots must be rejected.'
+    }
     & $installer -SkillsRoot $testDirectory | Out-Null
     Assert-MatchesSource
     foreach ($notice in @('LICENSE.txt', 'NOTICE.md', 'OUTPUT-LICENSE.md')) {
@@ -97,7 +113,7 @@ try {
         Assert-Condition ($before[$key] -eq $after[$key]) "Parent collision changed $key"
     }
 
-    Write-Output 'PASS: clean and repeat installs, legal notices, conflict rejection without partial writes, explicit update, extra-file preservation, self-install and overlap rejection, and parent-file collision rejection.'
+    Write-Output 'PASS: explicit destination required, clean and repeat installs, legal notices, conflict rejection without partial writes, explicit update, extra-file preservation, self-install and overlap rejection, and parent-file collision rejection.'
 }
 finally {
     if (Test-Path -LiteralPath $testDirectory) {

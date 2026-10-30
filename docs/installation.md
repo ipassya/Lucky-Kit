@@ -43,6 +43,22 @@ PowerShell 7:
 
 Replace the placeholder with a real directory. Both installers append `lucky-kit`; pass the parent skills directory, not the final package path. Use `python3` if that is your Python executable. Python or PowerShell is needed only for its installer, not to use the skill.
 
+Both installers require an explicit destination and never select a global directory automatically.
+
+### Codex: install only in a selected project
+
+Use the selected project's `.agents/skills` directory. Run one of these commands from the Lucky Kit repository root, replacing the project path:
+
+```powershell
+./scripts/install-skill.ps1 -SkillsRoot "C:/path/to/project/.agents/skills"
+```
+
+```sh
+python scripts/install-skill.py --skills-root "/path/to/project/.agents/skills"
+```
+
+The resulting package is `<project>/.agents/skills/lucky-kit/`. Repeat only for projects where you want Lucky Kit available. Keep it out of user-level skill directories and shared parent directories when you want project-only availability. See the [official Codex skill locations](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills).
+
 ## Updating an older Lucky Kit
 
 Back up local customizations before updating. To overwrite differing package files, repeat the installation command with Python's `--update` or PowerShell's `-Update` flag. Both installers check ordinary file conflicts before copying and retain extra destination files; they are not transactional against disk failures or concurrent edits.

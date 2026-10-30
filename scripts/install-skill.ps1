@@ -11,12 +11,7 @@ $ErrorActionPreference = 'Stop'
 $sourceDirectory = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../skills/lucky-kit'))
 
 if ([string]::IsNullOrWhiteSpace($SkillsRoot)) {
-    $codexDirectory = if ([string]::IsNullOrWhiteSpace($env:CODEX_HOME)) {
-        Join-Path $HOME '.codex'
-    } else {
-        $env:CODEX_HOME
-    }
-    $SkillsRoot = Join-Path $codexDirectory 'skills'
+    throw 'Specify -SkillsRoot explicitly. For a Codex project, use <project>/.agents/skills. No global installation is selected automatically.'
 }
 
 $destinationDirectory = [IO.Path]::GetFullPath((Join-Path $SkillsRoot 'lucky-kit'))
