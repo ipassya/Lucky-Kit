@@ -1,0 +1,6 @@
+interface:
+  display_name: "Lucky Kit"
+  short_description: "Align app ideas, specs, and codebase documentation"
+  default_prompt: "Use $lucky-kit to turn my idea, existing documents, or codebase into aligned specifications and an actionable handoff."
+policy:
+  allow_implicit_invocation: true
