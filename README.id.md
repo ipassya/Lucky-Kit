@@ -1,8 +1,11 @@
 # Lucky Kit
 
+[![CI](https://github.com/ipassya/Lucky-Kit/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/ipassya/Lucky-Kit/actions/workflows/validate.yml)
+[![Rilis](https://img.shields.io/github/v/release/ipassya/Lucky-Kit?label=rilis)](https://github.com/ipassya/Lucky-Kit/releases/latest)
+
 **Ubah ide aplikasi, dokumen yang sudah ada, atau codebase menjadi rencana implementasi yang jelas.**
 
-[English](README.md) · [Instalasi](docs/installation.md) · [Kontribusi](CONTRIBUTING.md)
+[English](README.md) · [Instalasi](docs/installation.md) · [Unduh v1.0.0 (ZIP)](https://github.com/ipassya/Lucky-Kit/releases/download/v1.0.0/lucky-kit-v1.0.0.zip) · [Kontribusi](CONTRIBUTING.md)
 
 Lucky Kit adalah kumpulan instruksi AI yang dapat digunakan kembali untuk perencanaan produk dan dokumentasi. Skill ini membantu founder, tim produk, dan developer menghubungkan kebutuhan, alur pengguna, desain, data, dan tugas implementasi. Mulai dari informasi yang tersedia; keputusan yang belum selesai tetap dicatat.
 

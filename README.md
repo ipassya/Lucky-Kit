@@ -1,8 +1,11 @@
 # Lucky Kit
 
+[![CI](https://github.com/ipassya/Lucky-Kit/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/ipassya/Lucky-Kit/actions/workflows/validate.yml)
+[![Release](https://img.shields.io/github/v/release/ipassya/Lucky-Kit?label=release)](https://github.com/ipassya/Lucky-Kit/releases/latest)
+
 **Turn an app idea, existing documents, or a codebase into a clear plan for implementation.**
 
-[Bahasa Indonesia](README.id.md) · [Installation](docs/installation.md) · [Contributing](CONTRIBUTING.md)
+[Bahasa Indonesia](README.id.md) · [Installation](docs/installation.md) · [Download v1.0.0 (ZIP)](https://github.com/ipassya/Lucky-Kit/releases/download/v1.0.0/lucky-kit-v1.0.0.zip) · [Contributing](CONTRIBUTING.md)
 
 Lucky Kit is a reusable set of AI instructions for product planning and documentation. It helps founders, product teams, and developers connect requirements, user flows, design, data, and implementation tasks. Start with what you know; unresolved decisions stay visible.
 
