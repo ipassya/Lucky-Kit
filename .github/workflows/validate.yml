@@ -1,0 +1,31 @@
+name: Validate Lucky Kit
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    name: Package and installer (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 5
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Validate package
+        run: python scripts/validate.py
+      - name: Check installer behavior
+        shell: pwsh
+        run: ./scripts/test-install.ps1
+      - name: Check Python installer behavior
+        run: python scripts/test-install.py
