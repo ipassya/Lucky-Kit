@@ -1,6 +1,6 @@
 # Distribution and release preparation
 
-This guide records the project's distribution decisions and the evidence needed for a public release. It does not represent a published release or a completed external review.
+This guide records the project's distribution decisions and release checks. Published versions and downloadable packages are listed on [GitHub Releases](https://github.com/ipassya/Lucky-Kit/releases). This guide is not an external review or certification.
 
 ## Project identity
 
@@ -23,7 +23,7 @@ The source folder is named `Lucky-Kit`; the installable package remains `lucky-k
 
 Keep the entrypoint focused and load detailed references as needed. Generated applications belong in their own workspaces. Avoid adding host-specific services or dependencies without a concrete workflow that needs them.
 
-The [installation guide](installation.md) covers manual installation, plain chat, optional Python/PowerShell installers, and host discovery. Official guidance for Codex, Claude Code, and Gemini CLI is documentation-reviewed, not proof of execution on every host.
+The [installation guide](installation.md) covers manual installation, plain chat, optional Python/PowerShell installers, and host discovery. Package validation and installer checks do not prove native skill loading on every platform.
 
 ## Authorship and reuse
 

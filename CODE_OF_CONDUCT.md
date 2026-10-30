@@ -10,12 +10,12 @@ These expectations apply to project-managed issues, pull requests, discussions, 
 
 ## Report a concern
 
-For harmful content on GitHub, use GitHub's reporting controls. For project moderation, use a private channel published on the official repository or maintainer profile. If none is listed, request one without sharing sensitive details.
+For harmful content on GitHub, use the content's **Report content** menu or [GitHub Support's abuse reporting form](https://support.github.com/contact/report-abuse). These reports go to GitHub Support; the **Report to repository admins** option, when available, goes to the project maintainer. Follow [GitHub's reporting instructions](https://docs.github.com/en/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam).
 
-A dedicated private contact must be configured before public launch. This document does not establish an email address or private reporting service.
+Do not disclose sensitive details in a public issue. No separate maintainer email or private moderation service is provided. For a project-specific concern outside GitHub's reporting scope, request a private contact without posting the details.
 
 ## Moderation
 
 The maintainer, Ihza Luckyan Passya, may request a change in behavior, remove harmful content, close a discussion, or restrict participation. Responses should reflect severity, repeated behavior, and the safety of affected people.
 
-Report details should be shared only as needed to address the concern. Appeals may use the same private channel. The project does not currently have a separate moderation team.
+Report details should be shared only as needed to address the concern. Direct appeals to the party handling the report through the same private channel. The project does not currently have a separate moderation team.
