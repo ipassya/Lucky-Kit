@@ -4,17 +4,23 @@
 
 The previous workflow defaulted to a Standard package with a README, six core documents, feature specifications, a handoff, and formal decision/assumption/question registers. That structure can help a large delivery but adds ceremony to small projects and users who already have good artifacts.
 
-The redesign makes a short, vendor-neutral entrypoint sufficient for simple work. Four optional references cover planning, artifact alignment, codebase documentation, and document composition. Three compact templates replace fifteen specialized templates. A coverage guide retains product, flow, design, technical, data, and delivery concerns without requiring a separate file for each.
+The redesign makes a short, vendor-neutral entrypoint sufficient for simple work. Four optional references cover planning, artifact alignment, codebase documentation, and document composition. The initial redesign replaced fifteen specialized templates with three compact starting points. The current package also provides six conditional PRD, TRD, AFD, DBD, BSD, and IPD templates. A coverage guide retains product, flow, design, technical, data, and delivery concerns without requiring a separate file for each.
 
 Removed: mandatory Standard/Extended profiles, default D/A/Q registers, obligatory ID chains, a separate visual exploration workflow, and duplicated status/verification instructions. Visual exploration and traceability remain conditional techniques. Existing project IDs and structure are preserved.
 
 Added: explicit artifact conflict handling, source-based reconstruction of existing applications, plain-chat fallback, language routing, and an optional standard-library Python installer with an explicit host directory.
 
+The initial chat-only-unless-saving-was-requested rule also suppressed expected planning artifacts. App planning now authorizes saved drafts in the application's workspace, with an explicit chat-only/review-only exception and a clear fallback when file access is unavailable. Discovery probes consequential decisions rather than only immediate blockers. Documents are updated during discovery so an unfinished interview does not prevent useful drafts. Specialized documents are created when their selection criteria apply, not merely suggested or generated as a mandatory package.
+
+File selection now explicitly considers the reader, the decision or work served, and whether an existing owner can carry the content. Topic coverage is not a trigger to create a file: even complex applications may need fewer than six documents, and focused requests need no companion package. Separate files are justified by the current request, meaningful detail, ownership, or maintenance needs rather than template availability.
+
+Creation and revision share a proportional quality loop: inspect context, change the owning content, reconcile dependents, review the result, and run relevant checks. Validated task updates are committed automatically in an existing Git repository, preserving unrelated work and honoring user/workspace exceptions. The workflow does not initialize repositories, push, or bypass failed checks. A missing repository or unsafe mixed changes is reported, not silently worked around.
+
 OpenAI UI metadata remains optional. Deleting it would reduce convenience for that host without improving the portability of the core. Multiple vendor adapters would add maintenance and drift without changing the shared instructions.
 
 ## Trade-offs
 
-A smaller library provides fewer domain-specific prompts. Complex projects still need deliberate coverage and may require more detailed documents. The document guide supplies that coverage; user-requested comprehensive documentation takes precedence over brevity.
+A compact library provides fewer domain-specific prompts. Complex projects still need deliberate coverage; conditional specialized templates support that without loading them for every task. User-requested comprehensive documentation takes precedence over brevity. Focused discovery can require multiple turns; stop when the requested scope is sufficiently clear or the user asks to proceed with explicit unknowns.
 
 Plain text is widely transferable but does not make every model equally capable. Native progressive loading can reduce loaded context, while a chat that receives the entire library pays for all of it. The fallback therefore starts with the core alone.
 

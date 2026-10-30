@@ -13,18 +13,24 @@ Lucky Kit adalah kumpulan instruksi AI yang dapat digunakan kembali untuk perenc
 
 | Titik awal | Hasil yang berguna |
 | --- | --- |
-| Ide aplikasi | Brief proyek berisi scope, alur utama, batasan, dan keputusan terbuka |
+| Ide aplikasi | Penggalian kebutuhan dan dokumen perencanaan tersimpan berisi scope, alur utama, batasan, dan keputusan terbuka |
 | Dokumen yang sudah ada | Kebutuhan dan desain yang selaras, dengan konflik diidentifikasi dan diselesaikan |
 | Codebase yang berjalan | Dokumentasi perilaku yang teramati, beserta bukti dan batas cakupannya |
 | Spesifikasi siap | Handoff implementasi berisi tugas, dependensi, dan kriteria penerimaan |
 
-Proyek kecil dimulai dengan satu brief. Dokumen produk, alur, desain, teknis, data, dan rencana pengerjaan dipisahkan sesuai kebutuhan. Review atau dokumentasi aplikasi gak otomatis mengizinkan perubahan kode.
+Perencanaan aplikasi otomatis membuat dan memperbarui dokumen di workspace aplikasi setelah lokasi dan tujuan dasarnya jelas. Kamu gak perlu meminta penyimpanan secara terpisah. Kalau lokasinya belum jelas, Lucky Kit menanyakannya sambil melanjutkan penggalian kebutuhan. Permintaan khusus diskusi saja atau review saja tetap di chat; tanpa akses file, skill memberikan isi dokumen dan menjelaskan bahwa hasil belum disimpan. Review atau dokumentasi aplikasi gak otomatis mengizinkan perubahan kode.
+
+Lucky Kit menggali keputusan penting lewat pertanyaan terarah, biasanya satu per satu. Pertanyaannya membahas skenario konkret, asumsi, prioritas, dan trade-off, memakai jawaban yang sudah tersedia, serta memperbarui draft seiring keputusan diperjelas. Kamu bisa meminta pertanyaan dihentikan dan draft dibuat dengan hal yang belum diketahui tetap ditandai.
+
+Lucky Kit memilih file berdasarkan siapa yang memakainya serta keputusan atau pekerjaan yang dibantu. Skill mengutamakan pembaruan dokumen yang ada atau penambahan bagian sebelum membuat file terpisah. PRD (Product Requirement Documentation), TRD (Technical Requirement Documentation), AFD (App Flow Documentation), DBD (Design Brief Documentation), BSD (Backend Schema Documentation), dan IPD (Implementation Plan Documentation) adalah pilihan format, bukan paket wajib. Aplikasi kompleks pun bisa memakai kurang dari enam file; permintaan khusus skema atau handoff gak otomatis menambah dokumen pendamping.
+
+Setiap pembuatan atau perubahan mengikuti konvensi workspace, menjaga keputusan yang menjadi acuan, meninjau isi serta dokumen terdampak, dan menjalankan pemeriksaan sesuai perubahan. Dalam repo Git yang sudah tersedia, Lucky Kit otomatis melakukan commit untuk satu pembaruan tugas yang utuh dan sudah divalidasi, kecuali kamu atau aturan workspace meminta sebaliknya. Perubahan lain tetap dijaga; perubahan yang bercampur dilaporkan sebagai hambatan, bukan ikut dimasukkan. Skill gak otomatis menginisialisasi Git atau melakukan push. Tanpa Git, dokumen tetap disimpan dan status tanpa commit dilaporkan.
 
 ## Mulai menggunakan
 
 1. Salin isi [SKILL.md](skills/lucky-kit/SKILL.md) ke chat AI, atau lampirkan jika platform mendukung pembacaan file.
 2. Salin template berikut. Ganti bagian dalam kurung; isi **“belum ditentukan”** jika belum tahu.
-3. Kirim bersama materi yang relevan. Berikan file rujukan saat diminta; simpan hasil di workspace aplikasi yang dikerjakan.
+3. Kirim bersama materi yang relevan dan lokasi workspace aplikasi. Berikan file rujukan saat diminta; dokumen perencanaan disimpan di sana jika akses file tersedia.
 
 ### Template siap salin
 
@@ -38,10 +44,10 @@ Platform dan desain: [web/mobile/lainnya; kebutuhan visual atau design system ya
 Data dan integrasi: [data yang dicatat, sumber, aturan akses, layanan eksternal].
 Batasan: [budget, tenggat, stack, atau kebutuhan lain].
 Materi tersedia: [belum ada, dokumen, desain, atau kode; lokasi jika bisa diakses].
-Hasil: [brief, spesifikasi selaras, dokumentasi kondisi aktual, atau handoff]; [chat
-  atau lokasi tujuan].
-Gunakan keputusan yang sudah ada, tandai kekurangan informasi, dan tanyakan hanya hal
-  yang menghambat pekerjaan.
+Hasil: [brief, spesifikasi selaras, dokumentasi kondisi aktual, atau handoff].
+Workspace aplikasi: [lokasi tujuan; atau minta khusus diskusi di chat saja].
+Gunakan keputusan yang sudah ada, gali kekurangan informasi dan trade-off penting,
+  serta perbarui dokumen seiring jawaban diperoleh.
 ```
 
 ### Contoh: aplikasi keuangan pribadi
@@ -59,10 +65,11 @@ Data dan integrasi: catatan pribadi per pengguna dalam Rupiah; login email; tanp
   koneksi bank.
 Batasan: MVP 6 minggu, hosting maksimal Rp500.000/bulan; stack belum ditentukan.
 Materi tersedia: baru ide.
-Hasil: brief di chat berisi scope, alur, kebutuhan data, kriteria penerimaan, dan
-  keputusan terbuka.
-Gunakan keputusan yang sudah ada, tandai kekurangan informasi, dan tanyakan hanya hal
-  yang menghambat pekerjaan.
+Workspace aplikasi: [path workspace aplikasi keuangan pribadi saya].
+Hasil: dokumen perencanaan tersimpan berisi scope, alur, kebutuhan data, kriteria
+  penerimaan, dan keputusan terbuka; pisahkan dokumen khusus sesuai kebutuhan.
+Gunakan keputusan yang sudah ada, gali kekurangan informasi dan trade-off penting,
+  serta perbarui dokumen seiring jawaban diperoleh.
 ```
 
 Ganti bidang, pengguna, dan batasan pada contoh untuk merencanakan ide lain. Permintaan berbahasa Indonesia menghasilkan diskusi dan dokumen Indonesia; bahasa lainnya menghasilkan bahasa Inggris.

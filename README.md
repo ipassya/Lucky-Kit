@@ -13,18 +13,24 @@ Lucky Kit is a reusable set of AI instructions for product planning and document
 
 | Your starting point | Useful output |
 | --- | --- |
-| An idea | A project brief with scope, key flows, constraints, and open decisions |
+| An idea | Guided discovery and saved planning documents with scope, key flows, constraints, and open decisions |
 | Existing documents | Aligned requirements and design, with conflicts identified and resolved |
 | A working codebase | Documentation of observed behavior, with evidence and coverage limits |
 | Ready specifications | An implementation handoff with tasks, dependencies, and acceptance criteria |
 
-Small projects start with one brief. Separate product, flow, design, technical, data, and delivery documents are added when needed. Reviewing or documenting an application does not authorize code changes.
+App planning automatically creates and updates documents in your application's workspace once the destination and basic outcome are known. You do not need to ask separately to save them. If the destination is unclear, Lucky Kit asks for it while continuing discovery. Explicit discussion-only and review-only requests stay in chat; without file access, it returns document content and clearly states that it has not been saved. Reviewing or documenting an application does not authorize code changes.
+
+Lucky Kit explores consequential decisions through focused questions, usually one at a time. It probes concrete scenarios, assumptions, priorities, and trade-offs, reuses answers already available, and updates drafts as decisions emerge. You can ask it to stop questions and produce a draft with explicit unknowns.
+
+Lucky Kit chooses files by who will use them and what decision or work they support. It updates an existing document or adds a section before creating a separate file. PRD (Product Requirement Documentation), TRD (Technical Requirement Documentation), AFD (App Flow Documentation), DBD (Design Brief Documentation), BSD (Backend Schema Documentation), and IPD (Implementation Plan Documentation) are available formats, not a required package. Even a complex app can use fewer than six files; a focused schema or handoff request does not automatically add companion documents.
+
+For each creation or revision, Lucky Kit follows workspace conventions, preserves authoritative decisions, reviews affected content and dependents, and performs checks appropriate to the change. In an existing Git repository, it automatically commits a coherent, validated task update unless you or the workspace instruct otherwise. It preserves unrelated work and reports blockers rather than bundling mixed changes. It does not initialize Git or push automatically. Without Git, it saves the documents and reports that no commit was made.
 
 ## Getting started
 
 1. Paste [SKILL.md](skills/lucky-kit/SKILL.md) into your AI chat, or attach it if file reading is supported.
 2. Copy the template below. Replace the brackets; use **“undecided”** where needed.
-3. Send it with any relevant material. Supply referenced files when requested; save outputs in your application's workspace.
+3. Send it with relevant material and your application's workspace. Supply referenced files when requested; planning documents are saved there when file access is available.
 
 ### Copy this template
 
@@ -36,9 +42,10 @@ Platform and design: [web/mobile/other; visual needs or existing design system].
 Data and integrations: [records, sources, access rules, external services].
 Constraints: [budget, timeline, stack, or other requirements].
 Existing material: [none, documents, designs, or code; locations if accessible].
-Deliver: [brief, aligned specifications, current-state docs, or handoff]; [chat or
-  destination].
-Reuse existing decisions, flag gaps, and ask only questions that block progress.
+Deliver: [brief, aligned specifications, current-state docs, or handoff].
+Application workspace: [destination; or explicitly request chat-only discussion].
+Reuse existing decisions, probe consequential gaps and trade-offs, and keep documents
+  updated as answers emerge.
 ```
 
 ### Example: personal finance app
@@ -55,9 +62,11 @@ Data and integrations: private per-user records in IDR; email sign-in; no bank
   connection.
 Constraints: 6-week MVP, hosting up to IDR 500,000/month; stack undecided.
 Existing material: idea only.
-Deliver: a brief in chat with scope, flows, data needs, acceptance criteria, and open
-  decisions.
-Reuse existing decisions, flag gaps, and ask only questions that block progress.
+Application workspace: [path to my personal finance app workspace].
+Deliver: saved planning documents with scope, flows, data needs, acceptance criteria,
+  and open decisions; split into specialized documents where needed.
+Reuse existing decisions, probe consequential gaps and trade-offs, and keep documents
+  updated as answers emerge.
 ```
 
 Replace the example's domain, users, and constraints to plan another idea. Indonesian requests produce Indonesian discussion and documents; other languages produce English output.
