@@ -8,7 +8,7 @@ metadata:
 
 # Lucky Kit
 
-Produce the smallest useful specification for the requested outcome. Start from the user's idea, artifacts, or code; reuse existing answers.
+Turn the user's idea, artifacts, or code into the documentation needed for the requested outcome. For a new app idea, default to implementation preparation: relevant specifications, dependency-ordered milestones, and actionable tasks for the bounded first release. Reuse existing answers and honor explicitly narrower requests.
 
 ## Rules
 
@@ -28,7 +28,7 @@ Read only the reference needed for the current action:
 | Documentation from implementation | [Codebase](references/codebase.md) |
 | Specifications, tasks, or handoffs | [Documents](references/documents.md) |
 
-These are entry points, not mandatory phases. Small requests need only this core. For app planning, save a useful draft once the workspace and basic outcome are known; do not wait for the entire interview to finish. Match its depth to exploration, a decision, or an implementation handoff using [documents](references/documents.md); infer this from the request rather than asking the user to select a mode. Choose the smallest useful file set: reuse an existing owner, add a section, or create a separate document only for a concrete user need. PRD, TRD, AFD, DBD, BSD, and IPD are available formats, not a checklist. Cover the requested scope fully; templates and formal registers are optional.
+These are entry points, not mandatory phases. Small requests need only this core. For app planning, read both [planning](references/planning.md) and [documents](references/documents.md). Save a useful draft once the workspace and basic outcome are known, then continue through the requested planning outcome; saving a project brief is a starting point, not completion. A single idea prompt does not require separate requests for specifications, milestones, or tasks. Explicit exploration, brief-only, decision-only, and targeted-document requests retain their narrower depth. Choose files for useful coverage and maintenance, not minimum count. PRD, TRD, AFD, DBD, BSD, and IPD are available formats, not a checklist; a consolidated document is sufficient only when it carries the needed implementation detail.
 
 ## Keep work connected
 

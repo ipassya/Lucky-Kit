@@ -12,7 +12,7 @@
 {{Accepted choices and sources; proposals, assumptions, conflicts, and their impact.}}
 
 ## Work and verification
-{{Requested work, dependencies, acceptance, verification method, actual evidence or unrun status.}}
+{{For implementation preparation: dependency-ordered milestones and actionable tasks covering the bounded release, inline or linked to their owning plan. Include milestone exit criteria and task IDs, outcomes, source requirements, dependencies, acceptance, verification, and readiness/blockers. Provide the next Ready task's handoff. For explicit exploration or a narrow request, keep only relevant next actions. Evidence remains unrun unless actually checked.}}
 
 ## Continue here
 {{Document map when needed, current position, next action, and blockers.}}

@@ -13,18 +13,20 @@ Lucky Kit adalah kumpulan instruksi AI yang dapat digunakan kembali untuk perenc
 
 | Titik awal | Hasil yang berguna |
 | --- | --- |
-| Ide aplikasi | Penggalian kebutuhan dan dokumen perencanaan tersimpan berisi scope, alur utama, batasan, dan keputusan terbuka |
+| Ide aplikasi | Spesifikasi yang relevan, milestone berurutan sesuai dependensi, dan tasks untuk versi pertama yang scope-nya jelas, beserta asumsi dan blocker |
 | Dokumen yang sudah ada | Kebutuhan dan desain yang selaras, dengan konflik diidentifikasi dan diselesaikan |
 | Codebase yang berjalan | Dokumentasi perilaku yang teramati, beserta bukti dan batas cakupannya |
 | Spesifikasi siap | Handoff implementasi berisi tugas, dependensi, dan kriteria penerimaan |
 
 Perencanaan aplikasi otomatis membuat dan memperbarui dokumen di workspace aplikasi setelah lokasi dan tujuan dasarnya jelas. Kamu gak perlu meminta penyimpanan secara terpisah. Kalau lokasinya belum jelas, Lucky Kit menanyakannya sambil melanjutkan penggalian kebutuhan. Permintaan khusus diskusi saja atau review saja tetap di chat; tanpa akses file, skill memberikan isi dokumen dan menjelaskan bahwa hasil belum disimpan. Review atau dokumentasi aplikasi gak otomatis mengizinkan perubahan kode.
 
-Lucky Kit punya penggalian kebutuhan seperti grill-me, biasanya satu pertanyaan per giliran. Skill membahas skenario konkret, menguji asumsi, menelusuri konsekuensi jawaban, dan menerima jawaban di luar opsi yang ditawarkan. Jawaban yang sudah ada dipakai kembali dan draft diperbarui seiring keputusan diperjelas. Kamu bisa meminta pertanyaan dihentikan dan draft dibuat dengan hal yang belum diketahui tetap ditandai; gak perlu skill wawancara terpisah.
+Satu prompt ide secara default memulai persiapan implementasi. Project brief menjadi draft awal atau spesifikasi lengkap untuk proyek kecil. Lucky Kit melanjutkan dokumentasi yang relevan dan rencana delivery tanpa menunggu prompt terpisah untuk tiap artefak. Setiap milestone punya hasil dan kriteria selesai; setiap task punya ID, hasil, rujukan kebutuhan, dependensi, kriteria penerimaan, metode verifikasi, dan status kesiapan atau blocker. Task berikutnya yang siap dikerjakan mendapat handoff. Permintaan eksplorasi saja, brief saja, review, atau dokumen tertentu tetap mengikuti batasnya.
 
-Lucky Kit memilih file berdasarkan siapa yang memakainya serta keputusan atau pekerjaan yang dibantu. Skill mengutamakan pembaruan dokumen yang ada atau penambahan bagian sebelum membuat file terpisah. PRD (Product Requirement Documentation), TRD (Technical Requirement Documentation), AFD (App Flow Documentation), DBD (Design Brief Documentation), BSD (Backend Schema Documentation), dan IPD (Implementation Plan Documentation) adalah pilihan format, bukan paket wajib. Aplikasi kompleks pun bisa memakai kurang dari enam file; permintaan khusus skema atau handoff gak otomatis menambah dokumen pendamping.
+Lucky Kit punya penggalian kebutuhan terarah seperti grill-me. Skill membahas skenario konkret, menguji asumsi, dan menelusuri konsekuensi pertanyaan yang diperlukan, biasanya satu keputusan per giliran. Jawaban yang sudah ada dipakai kembali, sementara dokumentasi yang gak bergantung pada jawaban dilanjutkan dengan asumsi yang jelas dan bisa diubah. Keputusan penting yang belum selesai memblokir task terkait. Kalau konteks cukup, wawancara gak wajib; usulan yang belum disepakati gak dianggap sudah disetujui atau siap tanpa syarat. Gak perlu skill wawancara terpisah.
 
-Kedalaman isi mengikuti penggunaan berikutnya: eksplorasi mencatat kebutuhan dan pertanyaan penting, dukungan keputusan membandingkan trade-off yang relevan, sedangkan handoff implementasi menyediakan kontrak dan kriteria penerimaan untuk mulai bekerja. Lucky Kit menyimpulkannya dari permintaan, memperdalam dokumen yang ada saat keputusan matang, dan gak memaksakan jumlah kata atau formulir pemilihan mode.
+Lucky Kit memilih file berdasarkan siapa yang memakainya serta keputusan atau pekerjaan yang dibantu. Dokumen yang masih berguna diperbarui, dan topik substansial dipisahkan ketika membantu implementasi atau pemeliharaan. PRD (Product Requirement Documentation), TRD (Technical Requirement Documentation), AFD (App Flow Documentation), DBD (Design Brief Documentation), BSD (Backend Schema Documentation), dan IPD (Implementation Plan Documentation) adalah pilihan format, bukan paket wajib. Proyek kecil bisa memakai satu spesifikasi lengkap beserta rencana delivery; proyek lebih besar mendapat dokumen terpisah sesuai kebutuhan. Permintaan khusus skema atau handoff gak otomatis menambah dokumen pendamping.
+
+Persiapan implementasi mencakup seluruh versi pertama yang direncanakan, termasuk tasks setelah task awal. Draft perencanaan yang lengkap masih bisa punya blocker; Lucky Kit melaporkannya dan menunjukkan pekerjaan yang bisa dimulai secara independen. Kelengkapan rencana gak membuktikan persetujuan, implementasi, keberhasilan pengujian, atau kesiapan produksi.
 
 Setiap pembuatan atau perubahan mengikuti konvensi workspace, menjaga keputusan yang menjadi acuan, meninjau isi serta dokumen terdampak, dan menjalankan pemeriksaan sesuai perubahan. Dalam repo Git yang sudah tersedia, Lucky Kit otomatis melakukan commit untuk satu pembaruan tugas yang utuh dan sudah divalidasi, kecuali kamu atau aturan workspace meminta sebaliknya. Perubahan lain tetap dijaga; perubahan yang bercampur dilaporkan sebagai hambatan, bukan ikut dimasukkan. Skill gak otomatis menginisialisasi Git atau melakukan push. Tanpa Git, dokumen tetap disimpan dan status tanpa commit dilaporkan.
 
@@ -38,6 +40,8 @@ Perubahan yang bercampur dalam satu file perlu dipisahkan per bagian; memilih se
 
 ### Template siap salin
 
+Ide dan workspace aplikasi sudah cukup untuk mulai. Field lain membantu menjaga keputusanmu; kamu gak perlu menyebut jenis dokumen atau mengisi semua field.
+
 ```text
 Gunakan Lucky Kit untuk merencanakan [aplikasi] bagi [pengguna], guna menyelesaikan
   [masalah].
@@ -48,10 +52,12 @@ Platform dan desain: [web/mobile/lainnya; kebutuhan visual atau design system ya
 Data dan integrasi: [data yang dicatat, sumber, aturan akses, layanan eksternal].
 Batasan: [budget, tenggat, stack, atau kebutuhan lain].
 Materi tersedia: [belum ada, dokumen, desain, atau kode; lokasi jika bisa diakses].
-Hasil: [brief, spesifikasi selaras, dokumentasi kondisi aktual, atau handoff].
+Hasil: spesifikasi yang relevan, milestone, dan tasks sampai persiapan implementasi.
+  [Ganti hanya kalau menginginkan hasil yang lebih terbatas.]
 Workspace aplikasi: [lokasi tujuan; atau minta khusus diskusi di chat saja].
 Gunakan keputusan yang sudah ada, gali kekurangan informasi dan trade-off penting,
-  serta perbarui dokumen seiring jawaban diperoleh.
+  serta perbarui dokumen seiring jawaban diperoleh. Lanjutkan dengan asumsi yang jelas
+  jika masuk akal; tandai blocker penting dan tuntaskan perencanaan yang independen.
 ```
 
 ### Contoh: aplikasi keuangan pribadi
@@ -70,10 +76,12 @@ Data dan integrasi: catatan pribadi per pengguna dalam Rupiah; login email; tanp
 Batasan: MVP 6 minggu, hosting maksimal Rp500.000/bulan; stack belum ditentukan.
 Materi tersedia: baru ide.
 Workspace aplikasi: [path workspace aplikasi keuangan pribadi saya].
-Hasil: dokumen perencanaan tersimpan berisi scope, alur, kebutuhan data, kriteria
-  penerimaan, dan keputusan terbuka; pisahkan dokumen khusus sesuai kebutuhan.
+Hasil: seluruh dokumen perencanaan yang relevan, milestone, dan tasks untuk MVP ini,
+  termasuk dependensi, kriteria penerimaan, verifikasi, blocker, dan handoff task berikutnya.
+  Pisahkan dokumen khusus sesuai kebutuhan; jangan berhenti di project brief.
 Gunakan keputusan yang sudah ada, gali kekurangan informasi dan trade-off penting,
-  serta perbarui dokumen seiring jawaban diperoleh.
+  serta perbarui dokumen seiring jawaban diperoleh. Lanjutkan dengan asumsi yang jelas
+  jika masuk akal; tandai blocker penting dan tuntaskan perencanaan yang independen.
 ```
 
 Ganti bidang, pengguna, dan batasan pada contoh untuk merencanakan ide lain. Permintaan berbahasa Indonesia menghasilkan diskusi dan dokumen Indonesia; bahasa lainnya menghasilkan bahasa Inggris.

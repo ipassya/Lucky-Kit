@@ -16,7 +16,9 @@ File selection now explicitly considers the reader, the decision or work served,
 
 Creation and revision share a proportional quality loop: inspect context, change the owning content, reconcile dependents, review the result, and run relevant checks. Validated task updates are committed automatically in an existing Git repository, preserving unrelated work and honoring user/workspace exceptions. The workflow does not initialize repositories, push, or bypass failed checks. A missing repository or unsafe mixed changes is reported, not silently worked around.
 
-Depth is now inferred from the next use: exploration, decision support, or implementation handoff. These are not mandatory phases or document sets. Early discovery asks consequential questions promptly and avoids detailed architecture before basic intent is understood. Existing documents deepen as needed. The built-in probing interview remains active, including follow-up reasoning, accepting answers outside suggested options, and respecting a request to stop questions.
+Depth follows the requested outcome, with implementation preparation as the default for a new app idea. Previously, the exploratory interpretation and repeated preference for consolidation could let an agent stop at a brief and omit delivery work. A single idea prompt now carries through relevant specifications, milestones, and tasks across a bounded first release. A brief remains a valid initial draft or a small complete specification; it does not define completion. Explicit exploration, decision support, review, and targeted-document requests retain their narrower scope.
+
+Focused discovery supports that outcome rather than requiring an interview before all planning work. Known answers and reversible assumptions support independent specifications and tasks; unresolved material decisions block dependent work and prevent an unconditional readiness claim. Milestones have outcomes and exit criteria, every in-scope task has actionable acceptance and verification, and the next Ready task has a handoff. Splitting substantial topics is encouraged when it improves usability, without restoring a mandatory six-document package.
 
 Mixed Git changes are assessed against HEAD, index, and working tree, including changes within one file. Hook failures and no-commit requests have explicit boundaries. Repeatable evaluation tooling prepares fixtures outside the repository and inspects observable facts separately from human judgments of relevance, depth, and discovery. A safe blocked commit is reported separately from successful automatic committing.
 
@@ -24,7 +26,7 @@ OpenAI UI metadata remains optional. Deleting it would reduce convenience for th
 
 ## Trade-offs
 
-A compact library provides fewer domain-specific prompts. Complex projects still need deliberate coverage; conditional specialized templates support that without loading them for every task. User-requested comprehensive documentation takes precedence over brevity. Focused discovery can require multiple turns; stop when the requested scope is sufficiently clear or the user asks to proceed with explicit unknowns.
+A compact library provides fewer domain-specific prompts. Complex projects still need deliberate coverage; conditional specialized templates support that without loading them for every task. Implementation preparation requires more detail than an exploratory brief, but not a fixed file count. One prompt can produce a complete planning draft; missing material decisions can still require follow-up before dependent tasks become Ready. Do not invent user intent to promise a fully implementation-ready result from insufficient input.
 
 Plain text is widely transferable but does not make every model equally capable. Native progressive loading can reduce loaded context, while a chat that receives the entire library pays for all of it. The fallback therefore starts with the core alone.
 

@@ -1,12 +1,12 @@
 # Planning from incomplete input
 
-Use existing context to identify the user, their task, the first useful outcome, and hard constraints. For a vague idea, recommend a bounded first version and ask the question most likely to change it. Explain choices through use, cost, and maintenance rather than a technology quiz. A draft permits labeled assumptions, not invented facts.
+Use existing context to identify the user, their task, the first useful outcome, and hard constraints. For a vague idea, recommend a bounded first version and surface the uncertainty most likely to change it. Unless the user limits the request to exploration or another narrow outcome, carry that first version through specifications and a milestone/task plan in the same request. Explain choices through use, cost, and maintenance rather than a technology quiz. A draft permits labeled assumptions, not invented facts.
 
 ## Discover through focused questions
 
 This probing interview is built into Lucky Kit; no separate interview skill is required. Its purpose is to uncover what the user wants and test how the plan holds together, not merely collect fields for documents.
 
-Read relevant supplied material first. Identify what is known and the consequential decisions still open, then explore one decision at a time by default. A small group of closely related questions is useful when the answers do not depend on each other. Do not send a generic questionnaire or ask the user for facts available in the workspace.
+Read relevant supplied material first. Identify what is known and the consequential decisions still open. When an answer is needed to determine material scope, permissions, money, ownership, or irreversible behavior, ask a focused question, normally one decision at a time. A small group of closely related questions is useful when the answers do not depend on each other. Do not make an interview a prerequisite for the whole plan, send a generic questionnaire, or ask for facts available in the workspace. Resolve routine reversible implementation choices with labeled assumptions rather than treating every unspecified detail as a blocker. If context is sufficient, produce the planning deliverables without requiring another prompt.
 
 Choose the next question by its effect on scope, user behavior, design, feasibility, cost, or acceptance, not just whether work is blocked. Follow the answer into concrete consequences before switching topics. For example, if users share records, establish who can view, edit, delete, and recover them; if offline use matters, establish what happens to conflicting edits. Apply these examples only when relevant.
 
@@ -14,9 +14,9 @@ Replace vague preferences with scenarios: who encounters the problem, what they 
 
 For an uncertain user, offer concrete alternatives with consequences rather than demanding technical expertise. An unanswered question is not consent. Continue independent work with labeled reversible assumptions; keep decisions about money, access, ownership, and irreversible changes unresolved when intent is missing.
 
-Ask the priority question promptly. Once the application workspace and basic outcome are known, create or update a draft using [documents](documents.md), even while discovery continues. During exploration, keep that draft focused on what helps the next decision rather than elaborating architecture and tasks before basic intent is understood. After meaningful answers, state what they change, probe the next consequential uncertainty, and reconcile the affected sections and dependents. Accept answers outside suggested options. Capture unresolved questions with their impact near the relevant rule; do not treat drafts as approved or ready.
+Ask necessary questions promptly and continue independent documentation while answers are pending. Once the application workspace and basic outcome are known, create or update a draft using [documents](documents.md). For implementation preparation, use a coherent proposed MVP and reversible design/technical assumptions to develop all relevant specifications, milestones, and tasks; do not stop at the initial brief or offer to create the rest later. For explicit exploration, keep the draft focused on the next decision. After meaningful answers, state what they change and reconcile affected specifications and tasks. Accept answers outside suggested options. Capture unresolved questions with their impact near the relevant rule and block only dependent work; do not treat proposals as approved or unresolved contracts as ready.
 
-End discovery when the requested planning scope has clear outcomes, boundaries, material behavior, and observable acceptance, with remaining unknowns either deferred explicitly or attached to affected blocked work. Do not pursue every imaginable edge case. If the user asks to stop questions or proceed with a draft, honor that and document uncertainty. An explicit discussion-only request remains in chat.
+End discovery when the requested planning scope has clear outcomes, boundaries, material behavior, and observable acceptance, with remaining unknowns either deferred explicitly or attached to affected blocked work. For implementation preparation, finish the documentation and delivery plan as well; interview completion alone is not task completion. Do not pursue every imaginable edge case. If the user asks to stop questions or proceed with a draft, honor that and document uncertainty. An explicit discussion-only request remains in chat.
 
 ## Product and behavior
 
@@ -34,6 +34,6 @@ Use a sketch or preview when it resolves a real layout or interaction decision, 
 
 ## Delivery
 
-Sequence work by dependencies and useful outcomes. A prototype or technical spike is conditional, not a mandatory first milestone. Existing projects can start with their next missing capability. Detail the next implementable slice; give later work scope, dependencies, and acceptance without speculative file-by-file plans. Do not invent dates or capacity.
+Sequence work by dependencies and useful outcomes. A prototype or technical spike is conditional, not a mandatory first milestone. Existing projects can start with their next missing capability. For implementation preparation, cover the entire bounded first release with milestones and tasks using [documents](documents.md#milestones-and-tasks). Detail the next implementable task as a handoff and give every later in-scope task an actionable outcome, dependencies, acceptance, verification, and readiness without speculative file-by-file plans. Do not invent dates or capacity.
 
 Use [documents](documents.md) when preparing durable specifications or a handoff. Stop at the requested result; planning does not itself initiate implementation.

@@ -13,18 +13,20 @@ Lucky Kit is a reusable set of AI instructions for product planning and document
 
 | Your starting point | Useful output |
 | --- | --- |
-| An idea | Guided discovery and saved planning documents with scope, key flows, constraints, and open decisions |
+| An idea | Relevant specifications, dependency-ordered milestones, and actionable tasks for a bounded first release, with assumptions and blockers visible |
 | Existing documents | Aligned requirements and design, with conflicts identified and resolved |
 | A working codebase | Documentation of observed behavior, with evidence and coverage limits |
 | Ready specifications | An implementation handoff with tasks, dependencies, and acceptance criteria |
 
 App planning automatically creates and updates documents in your application's workspace once the destination and basic outcome are known. You do not need to ask separately to save them. If the destination is unclear, Lucky Kit asks for it while continuing discovery. Explicit discussion-only and review-only requests stay in chat; without file access, it returns document content and clearly states that it has not been saved. Reviewing or documenting an application does not authorize code changes.
 
-Lucky Kit includes a probing interview in the spirit of grill-me, usually one question at a time. It explores concrete scenarios, challenges assumptions, follows answers into their consequences, and accepts answers beyond its suggested options. It reuses known answers and updates drafts as decisions emerge. You can ask it to stop questions and produce a draft with explicit unknowns; no separate interview skill is required.
+One idea prompt starts implementation preparation by default. A project brief is an initial draft or a small complete specification, not the stopping point: Lucky Kit continues through the relevant documentation and a delivery plan without separate prompts for each artifact. Each milestone has an outcome and exit criteria; each task has an ID, result, source requirements, dependencies, acceptance, verification, and readiness or blockers. The next Ready task gets a handoff. Explicit exploration, brief-only, review, or targeted-document requests keep their narrower scope.
 
-Lucky Kit chooses files by who will use them and what decision or work they support. It updates an existing document or adds a section before creating a separate file. PRD (Product Requirement Documentation), TRD (Technical Requirement Documentation), AFD (App Flow Documentation), DBD (Design Brief Documentation), BSD (Backend Schema Documentation), and IPD (Implementation Plan Documentation) are available formats, not a required package. Even a complex app can use fewer than six files; a focused schema or handoff request does not automatically add companion documents.
+Lucky Kit includes focused discovery in the spirit of grill-me. It explores concrete scenarios, challenges assumptions, and follows necessary questions into their consequences, normally one decision at a time. It reuses known answers and continues independent documentation with labeled reversible assumptions. Missing material decisions block the affected tasks, not the entire planning package. If context is sufficient, no interview is required; unresolved proposals are never presented as approved or unconditionally ready. No separate interview skill is required.
 
-Depth follows the next use: exploration captures needs and consequential questions, decision support compares meaningful trade-offs, and an implementation handoff provides the contracts and acceptance needed to act. Lucky Kit infers this from your request, deepens existing documents as decisions mature, and does not impose a word count or a mode-selection questionnaire.
+Lucky Kit chooses files by who will use them and what decision or work they support. It updates usable existing documents and splits substantial topics when that improves implementation or maintenance. PRD (Product Requirement Documentation), TRD (Technical Requirement Documentation), AFD (App Flow Documentation), DBD (Design Brief Documentation), BSD (Backend Schema Documentation), and IPD (Implementation Plan Documentation) are available formats, not a required package. A small project can use one complete specification with its delivery plan; a larger project gets the separate documents it needs. A focused schema or handoff request does not automatically add companion documents.
+
+Implementation preparation covers the whole bounded release, not just the first task. A complete planning draft can still contain blockers; Lucky Kit reports them and identifies independent work that can start. Planning completeness does not prove approval, implementation, test success, or production readiness.
 
 For each creation or revision, Lucky Kit follows workspace conventions, preserves authoritative decisions, reviews affected content and dependents, and performs checks appropriate to the change. In an existing Git repository, it automatically commits a coherent, validated task update unless you or the workspace instruct otherwise. It preserves unrelated work and reports blockers rather than bundling mixed changes. It does not initialize Git or push automatically. Without Git, it saves the documents and reports that no commit was made.
 
@@ -38,6 +40,8 @@ Changes mixed in the same file require hunk-level isolation; selecting the whole
 
 ### Copy this template
 
+An idea and an application workspace are enough to start. Other fields help preserve your decisions; you do not need to name document types or fill every field.
+
 ```text
 Use Lucky Kit to plan [app] for [users], solving [problem].
 Main flow: [trigger → actions → outcome].
@@ -46,10 +50,12 @@ Platform and design: [web/mobile/other; visual needs or existing design system].
 Data and integrations: [records, sources, access rules, external services].
 Constraints: [budget, timeline, stack, or other requirements].
 Existing material: [none, documents, designs, or code; locations if accessible].
-Deliver: [brief, aligned specifications, current-state docs, or handoff].
+Deliver: relevant specifications, milestones, and actionable tasks through implementation
+  preparation. [Replace only if you want a narrower outcome.]
 Application workspace: [destination; or explicitly request chat-only discussion].
 Reuse existing decisions, probe consequential gaps and trade-offs, and keep documents
-  updated as answers emerge.
+  updated as answers emerge. Continue with labeled assumptions where reasonable;
+  flag material blockers and complete independent planning work.
 ```
 
 ### Example: personal finance app
@@ -67,10 +73,12 @@ Data and integrations: private per-user records in IDR; email sign-in; no bank
 Constraints: 6-week MVP, hosting up to IDR 500,000/month; stack undecided.
 Existing material: idea only.
 Application workspace: [path to my personal finance app workspace].
-Deliver: saved planning documents with scope, flows, data needs, acceptance criteria,
-  and open decisions; split into specialized documents where needed.
+Deliver: all relevant planning documents, milestones, and actionable tasks for this MVP,
+  including dependencies, acceptance, verification, blockers, and the next task's handoff.
+  Split into specialized documents where useful; do not stop at a project brief.
 Reuse existing decisions, probe consequential gaps and trade-offs, and keep documents
-  updated as answers emerge.
+  updated as answers emerge. Continue with labeled assumptions where reasonable;
+  flag material blockers and complete independent planning work.
 ```
 
 Replace the example's domain, users, and constraints to plan another idea. Indonesian requests produce Indonesian discussion and documents; other languages produce English output.

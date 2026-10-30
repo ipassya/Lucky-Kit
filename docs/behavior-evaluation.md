@@ -40,6 +40,19 @@ After the first exploration question, relay a plausible answer and inspect wheth
 
 Do not equate a saved file with successful discovery or a large document set with complete coverage. Review who will use each artifact, what decision/work it supports, and whether its detail is appropriate for exploration, decision-making, or implementation handoff. A focused request can need a single document. Existing owners should be updated rather than duplicated.
 
+## Evaluate idea-to-implementation planning
+
+The helper's existing exploration scenario explicitly requests exploration. It does not establish that an ordinary idea prompt reaches implementation preparation. Exercise the following requests in separate external workspaces when changing that default; the helper does not generate these additional fixtures:
+
+| Request | Review focus |
+| --- | --- |
+| One idea prompt for a small local app with known scope and stack, without naming document types | The output includes relevant specifications and milestones/tasks for the whole first release, plus the next task's handoff, without a follow-up request. A consolidated specification is acceptable; unnecessary backend or six-file scaffolding is not. |
+| One idea prompt for a multi-user app with a material access or ownership decision unresolved | Independent specifications and a full scoped delivery plan still appear. The missing decision is asked, affected tasks are blocked, and neither proposals nor the entire package are falsely declared Ready. Substantial contracts may justify separate documents. |
+| An explicit exploration-only or chat-only request | The agent respects requested depth and destination; exploration does not acquire an unrequested implementation package, and chat-only produces no saved application documents. |
+| A targeted update to an existing schema or task | The established owner and necessary dependents change without a new brief or unrelated full-release backlog. |
+
+Inspect actual task outcomes, source links, dependencies, acceptance, verification, readiness, milestone exit criteria, and coverage of all in-scope capabilities. "Build the app" or a detailed first task followed by vague future headings is insufficient. Check that no application implementation was initiated by planning alone. Record whether the exercise was a self-review walkthrough or an independent agent execution; a walkthrough is not evidence of runtime agent behavior.
+
 ## Inspect actual results
 
 ```sh

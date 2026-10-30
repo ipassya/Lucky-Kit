@@ -2,8 +2,11 @@
 
 {{Status, source specifications, implementation baseline, and delivery constraints.}}
 
-## Delivery sequence
-{{Useful implementation slices in dependency order, required inputs, observable acceptance, and blockers. Keep approval, readiness, implementation, verification, and release distinct. Do not invent dates or capacity.}}
+## Milestones
+{{Milestone IDs, useful outcomes, scope, predecessor milestones, and observable exit criteria across the bounded release. Include verification and distribution/operations when relevant. Link each milestone to its tasks. Keep later releases out of scope; do not invent dates or capacity.}}
+
+## Tasks
+{{For each milestone: task IDs, bounded results, linked requirements/contracts, dependencies, observable acceptance, verification methods, and readiness/blockers. Distinguish Ready, Waiting on dependencies, and Blocked by an unresolved decision, or reuse established statuses. Keep execution progress and actual evidence separate. Cover all in-scope capabilities; do not detail only the first task or invent file-by-file plans for later work.}}
 
 ## Next implementable task
 {{Bounded outcome, exclusions, binding decisions, applicable assumptions, existing/proposed targets, dependencies, and linked handoff when useful. Detail only work sufficiently understood.}}
