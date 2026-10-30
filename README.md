@@ -33,21 +33,27 @@ Platform and design: [web/mobile/other; visual needs or existing design system].
 Data and integrations: [records, sources, access rules, external services].
 Constraints: [budget, timeline, stack, or other requirements].
 Existing material: [none, documents, designs, or code; locations if accessible].
-Deliver: [brief, aligned specifications, current-state docs, or handoff]; [chat or destination].
+Deliver: [brief, aligned specifications, current-state docs, or handoff]; [chat or
+  destination].
 Reuse existing decisions, flag gaps, and ask only questions that block progress.
 ```
 
 ### Example: personal finance app
 
 ```text
-Use Lucky Kit to plan a personal finance app for freelancers who need to track irregular income.
+Use Lucky Kit to plan a personal finance app for freelancers who need to track irregular
+  income.
 Main flow: add income or expense → update wallet balance → review the monthly budget.
-MVP: manual transactions, wallets, categories, monthly budgets. Out of scope: bank sync, payments, investments.
-Platform and design: mobile-friendly web; a simple dashboard and quick transaction entry.
-Data and integrations: private per-user records in IDR; email sign-in; no bank connection.
+MVP: manual transactions, wallets, categories, monthly budgets. Out of scope: bank sync,
+  payments, investments.
+Platform and design: mobile-friendly web; a simple dashboard and quick transaction
+  entry.
+Data and integrations: private per-user records in IDR; email sign-in; no bank
+  connection.
 Constraints: 6-week MVP, hosting up to IDR 500,000/month; stack undecided.
 Existing material: idea only.
-Deliver: a brief in chat with scope, flows, data needs, acceptance criteria, and open decisions.
+Deliver: a brief in chat with scope, flows, data needs, acceptance criteria, and open
+  decisions.
 Reuse existing decisions, flag gaps, and ask only questions that block progress.
 ```
 

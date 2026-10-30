@@ -26,7 +26,9 @@ class InstallTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(prefix="lucky-kit-install-test-")
         self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        # macOS temporary paths can use /var -> /private/var. Test ordinary
+        # installs with the canonical path; test_link_rejected covers symlinks.
+        self.root = Path(self.temp.name).resolve()
 
     def test_install_repeat_and_legal_files(self):
         target, count = installer.install(self.root / "spaces and unicode é")
